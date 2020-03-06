@@ -1,7 +1,7 @@
 /**
  * layuiAdmin 核心模块
  */
-layui.define(['view', 'fakeLoader'], function (exports) {
+layui.define(['view'], function (exports) {
     var $ = layui.jquery,
         laytpl = layui.laytpl,
         element = layui.element,
@@ -19,7 +19,7 @@ layui.define(['view', 'fakeLoader'], function (exports) {
         THIS = 'layui-this',
         DISABLED = 'layui-disabled',
         TEMP = 'template',
-        APP_BODY = '#nj_app_body',
+        APP_BODY = '#resume_app_body',
         APP_FLEXIBLE = 'LAY_app_flexible',
         FILTER_TAB_TBAS = 'layadmin-layout-tabs',
         APP_SPREAD_SM = 'layadmin-side-spread-sm',
@@ -126,12 +126,14 @@ layui.define(['view', 'fakeLoader'], function (exports) {
             init: function (options) {
                 $body.prepend(`<div id="fakeloader"></div>`);
                 var fakeLoader = $("#fakeloader");
-                fakeLoader.fakeLoader($.extend({
-                    timeToHide: 9999999999,
-                    bgColor: "#2B313D",
-                    zIndex: '9999999999',
-                    spinner: "spinner" + admin.random(1, 7),
-                }, options));
+                layui.use('global', function () {
+                    fakeLoader.fakeLoader($.extend({
+                        timeToHide: 9999999999,
+                        bgColor: "#2B313D",
+                        zIndex: '9999999999',
+                        spinner: "spinner" + admin.random(1, 7),
+                    }, options));
+                });
             },
             
             // 销毁页面加载动画
@@ -1648,6 +1650,9 @@ layui.define(['view', 'fakeLoader'], function (exports) {
     }).on('mouseleave', '*[lay-tips]', function () {
         layer.close($(this).data('index'));
     });
+    
+    
+    
     
     // 窗口resize事件
     var resizeSystem = layui.data.resizeSystem = function () {

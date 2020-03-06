@@ -16,7 +16,7 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function (exports) {
         tableName: 'layuiAdmin',             // 本地存储表名
         MOD_NAME: 'admin',                   // 模块事件名
         transition: true,                    // 是否开启页面内过渡动画效果
-        loaderAnimation: true,               // 是否开启页面加载动画
+        loaderAnimation: false,               // 是否开启页面加载动画
         debug: true,                         // 是否开启调试模式。如开启，接口异常时会抛出异常 URL 等信息
         interceptor: false,                  // 是否开启未登入拦截
         request: {                           // 自定义请求字段

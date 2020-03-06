@@ -1,114 +1,43 @@
-<div class="container-box">
-    
-    <!-- 侧边栏遮罩层 -->
-    <div class="sidebar-shade"></div>
-    <!-- 侧边栏 -->
-    
-    <script type="text/html" template lay-url="{{ layui.setter.dataUrl }}">
-        
-        <div id="sidebar" data-expand="true">
+<div class="container-box layout-page">
+    <div class="container">
+        <div id="resume-box" class="row">
             
-            <!-- 侧边栏顶部 -->
-            
-            <div class="sidebar-header">
-                <!-- 侧边栏标题 -->
-                
-                <div class="sidebar-title animated-slow fadeIn" data-parent="sidebar">
-                    {{ layui.setter.support }}<br>{{ layui.setter.name }}
-                </div>
-                
-                <!-- 侧边栏切换按钮 -->
-                <button type="button" class="sidebar-btn sidebar-toggle animated-fasts fadeInLeft" data-parent="sidebar">
-                    <img src="src/img/sidebar-btn-white.png" alt="sidebar-btn-gray.png">
-                </button>
-            </div>
-            
-            <!-- 侧边栏主体 -->
-            <div class="sidebar-body">
-                <!-- 渲染侧边栏 -->
-                
-                <ul class="sidebar-menu">
-                    {{# layui.each(d.data, function(index, item){}}
-                    {{# if (item.type == 'link') { }}
-                    {{# if (index === 0) { }}
-                    <li class="sidebar-item">
-                        <a href="javascript:void(0)" class="active sidebar-link" lay-href="{{ item.url || '' }}">
-                            <img src="{{ item.icon }}" alt="">
-                            <span class="sidebar-item-text">{{ item.title }}</span>
-                        </a>
-                    </li>
-                    {{# } else { }}
-                    <li class="sidebar-item">
-                        <a href="javascript:void(0)" class="sidebar-link" lay-href="{{ item.url || '' }}">
-                            <img src="{{ item.icon }}" alt="">
-                            <span class="sidebar-item-text">{{ item.title }}</span>
-                        </a>
-                    </li>
-                    {{# } }}
-                    {{# } else if(item.type == 'group') { }}
-                    <li class="sidebar-item subtitle">{{ item.name }}</li>
-                    {{# } else if(item.type == 'menu') { }}
-                    <li class="sidebar-item">
-                        <a href="javascript:void(0)" data-toggle="submenu">
-                            <img src="{{ item.icon }}" alt="">
-                            <span class="sidebar-item-text">{{ item.title }}</span>
-                            <i class="layui-icon layui-icon-down"></i>
-                        </a>
-                        <ul class="sidebar-submenu" id="submenu{{ index }}">
-                            {{# layui.each(item.child, function(index2, item2){ }}
-                            <li>
-                                <a href="javascript:void(0)" class="sidebar-link" data-index="{{ index2 }}" submenu-link lay-href="{{ item2.url || '' }}">
-                                    {{ item2.title }}
-                                </a></li>
-                            {{# }); }}
+            <div class="left resume-box-item col-md-3 animated-fasts fadeInLeft">
+                <div class="card custom-card" id="left-card">
+                    <div class="card-body">
+                        <div class="my-picture">
+                            <div class="pic-bg">
+                                <img src="src/img/users.jpg" alt="" class="rounded-circle">
+                            </div>
+                        </div>
+                        
+                        <!--<div class="my-info">-->
+                            <!--<h1 class="my-name">方凌松</h1>-->
+                            <!--<h4 class="subtext">WEB 前端工程师</h4>-->
+                            <!--<h6 class="address"><i class="fa fa-map-marker"></i>湖南长沙</h6>-->
+                        <!--</div>-->
+                        <ul class="resume-menu" id="resume-menu">
+                            <li><a lay-href="/" class="active"><span>简介</span> <i class="fa fa-user fa-fw"></i></a></li>
+                            <li><a lay-href="/job"><span>工作经历</span> <i class="fa fa-briefcase fa-fw"></i></a></li>
+                            <li><a lay-href="/experience"><span>项目经验</span> <i class="fa fa-file-text fa-fw"></i></a></li>
+                            <li><a lay-href="/skills"><span>技能专长</span> <i class="fa fa-tasks fa-fw"></i></a></li>
+                            <li><a lay-href="/works"><span>作品集</span> <i class="fa fa-image fa-fw"></i></a></li>
                         </ul>
-                    </li>
-                    {{# } }}
-                    {{# }); }}
-                </ul>
+                    </div>
+                </div>
+            </div>
             
-            </div>
-        </div>
-    </script>
-    
-    <!-- 主体内容 -->
-    <div class="content">
-        <!-- 头部 -->
-        <div class="content-header">
-            <!-- 侧边栏切换按钮 -->
-            <button type="button" class="sidebar-btn sidebar-toggle animated-fasts fadeIn" data-parent="content">
-                <img src="src/img/sidebar-btn-gray.png" alt="sidebar-btn-gray.png">
-            </button>
-            <!-- 侧边栏标题 -->
-            <script type="text/html" template>
-                <div class="sidebar-title animated-fasts fadeInDown" data-parent="content">
-                    {{ layui.setter.support }}{{ layui.setter.name }}
+            <div class="right resume-box-item col-md-9 animated-fast fadeInRight">
+                <div class="card custom-card" id="right-card">
+                    <div class="card-body" id="resume_app_body">
+                        <div class="layadmin-tabsbody-item layui-show area">
+                        
+                        </div>
+                    </div>
                 </div>
-            </script>
-            <!-- 顶部右侧 -->
-            <div class="content-right">
-                <a href="javascript:void(0)" class="user-header-ico">
-                    <img src="src/img/user-ico.png" alt="user-ico.png" class="rounded-circle"></a>
-                <div class="user-name">当前用户：
-                    <script type="text/html" template>
-                        {{# if (layui.setter.role == 1) { }}
-                        <span>撰稿人</span>
-                        {{# } else if(layui.setter.role == 2) { }}
-                        <span>主编</span>
-                        {{# } else if(layui.setter.role == 3) { }}
-                        <span>栏目责编</span>
-                        {{# } else if(layui.setter.role == 4) { }}
-                        <span>编辑</span>
-                        {{# } }}
-                    </script>
-                </div>
-                <a href="javascript:void(0)" title="退出" class="logout-link" layadmin-event="logout"><img src="src/img/logout-ico.png" alt=""></a>
             </div>
-        </div>
-        <!-- 路由页面显示区域 -->
-        <div class="content-body" id="nj_app_body">
-            <div class="layadmin-tabsbody-item layui-show area"></div>
+            
         </div>
     </div>
-
 </div>
+

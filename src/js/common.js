@@ -2,7 +2,7 @@
  * layuiAdmin 公共业务模块
  * 公共业务的逻辑处理，此模块切换任何页面都会执行
  */
-layui.define(function (exports) {
+layui.define('global',function (exports) {
     var $ = layui.$,
         layer = layui.layer,
         laytpl = layui.laytpl,

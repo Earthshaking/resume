@@ -171,6 +171,7 @@ layui.define(['setter', 'admin', 'util', 'layer', 'view', 'table'], function (ex
                 imagePath: '' // Default Path custom image
             }, options);
         
+            var loadText = "";
             //Customized Spinners
             var spinner01 = '<div class="fl spinner1"><div class="double-bounce1"></div><div class="double-bounce2"></div></div><div class="loader-text">' + loadText + '</div>';
             var spinner02 = '<div class="fl spinner2"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div><div class="loader-text">' + loadText + '</div>';
@@ -3067,6 +3068,6 @@ layui.define(['setter', 'admin', 'util', 'layer', 'view', 'table'], function (ex
         }
     })(jQuery);
     
-    exports('global', global);
+    exports('global', null);
     
 });

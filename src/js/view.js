@@ -181,14 +181,9 @@ layui.define(['laytpl', 'layer'], function (exports) {
             },
             success: function (html) {
                 html = '<div>' + html + '</div>';
-                
-                var elemTitle = $(html).find('title'),
-                    title = "";
-                
-                layui.use('global', function () {
-                    var global = layui.global;
-                    title = global.judgeTitle() || elemTitle.text() || (html.match(/\<title\>([\s\S]*)\<\/title>/) || [])[1];
-                });
+    
+                var elemTitle = $(html).find('title')
+                    , title = elemTitle.text() || (html.match(/\<title\>([\s\S]*)\<\/title>/) || [])[1];
                 
                 layui.use('admin', function () {
                     var admin = layui.admin;

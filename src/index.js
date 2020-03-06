@@ -181,6 +181,14 @@ layui.extend({
                 } else { //初始控制台结构
                     container.render('layout').done(function () {
                         renderPage();
+    
+                        var $menu = $('#resume-menu');
+    
+                        // 侧边栏点击
+                        $menu.on('click', 'a', function () {
+                            var $this = $(this);
+                            $this.addClass('active').parent('li').siblings('li').find('a').removeClass('active');
+                        });
                         
                         admin.pageType = 'console';
                     });

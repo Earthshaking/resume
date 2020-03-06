@@ -3,26 +3,24 @@
     margin: 0;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     --transition: all 200ms ease;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-body {
-    position: relative;
-    font-family: "微软雅黑", Arial, sans-serif;
+    --mainColor: #3B5998;
+    --mainColor2: #3E4E72;
+    --darkColor: #29365d;
+    --darkColor2: #132D63;
+    --lightColor: #839CCF;
+    --lightColor2: #6E8CCC;
+    --whiteColor: #FFF;
+    --whiteColor2: #F2F2F2;
 }
 
 /*-------------------------------------------------
-                PC端滚动条必需样式
+                滚动条样式
  -------------------------------------------------*/
 
 ::-webkit-scrollbar {
@@ -35,7 +33,7 @@ body {
 }
 
 ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
-    background-color: #f5f5f5;
+    background-color: #e8e8e8;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -49,4 +47,516 @@ body {
 
 ::-webkit-scrollbar-thumb:vertical:active {
     background-color: rgba(0, 0, 0, .35);
+}
+
+/*---------------------------*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#RESUME_app {
+    width: 100%;
+    height: 100%;
+}
+
+#resume_app_body {
+    overflow: auto;
+}
+
+body {
+    position: relative;
+    font-family: "微软雅黑", Arial, sans-serif;
+    background-color: #D9DBDD;
+}
+
+body:after, body:before {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+body.custom-bg:before {
+    background-image: url("../img/code-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    content: '';
+}
+
+body.custom-bg:after {
+    background-color: rgba(34, 34, 34, 0.3);
+    z-index: 2;
+    content: '';
+}
+
+.layout-page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    padding-top: 120px;
+}
+
+#resume-box {
+    height: 620px;
+}
+
+.resume-box-item {
+    height: 100%;
+}
+
+.resume-box-item.left {
+    padding-right: 0;
+}
+
+.resume-box-item.right {
+    padding-left: 0;
+}
+
+.custom-card {
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+}
+
+#left-card {
+
+}
+
+#left-card .card-body {
+    padding: 0;
+    background-color: var(--mainColor)
+}
+
+#left-card .my-picture {
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    padding: 30px 20px 30px;
+    background-size: cover;
+    background-image: url("../img/blur-bg.jpg");
+}
+
+#left-card .my-info {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.pic-bg {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    color: var(--lightColor);
+    background-color: rgba(255, 255, 255, 0.17);
+    border-radius: 50%;
+}
+
+.pic-bg img {
+    width: 100px;
+    height: 100px;
+}
+
+.my-info .my-name {
+    font-size: 22px;
+    color: var(--lightColor);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: "思源黑体 CN Normal", "微软雅黑", Arial, sans-serif;
+}
+
+.my-info .subtext {
+    color: var(--lightColor);
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 500 !important;
+    font-family: "思源黑体 CN Normal", "微软雅黑", Arial, sans-serif;
+}
+
+.my-info .address {
+    color: var(--lightColor);
+    font-size: 14px;
+}
+
+.my-info .address i {
+    margin-right: 5px;
+}
+
+#left-card .resume-menu {
+    width: 100%;
+    /*height: auto;*/
+    height: calc(100% - 180px);
+    background-color: var(--darkColor);
+}
+
+#left-card .resume-menu li {
+
+}
+
+#left-card .resume-menu li > a {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    padding-left: 25px;
+    padding-right: 25px;
+    transition: background-color 500ms ease;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+#left-card .resume-menu li > a:hover {
+    background-color: var(--mainColor2);
+}
+
+#left-card .resume-menu li > a.active {
+    background-color: #FFF;
+    color: var(--darkColor);
+    /*border-right: 1px solid var(--darkColor);*/
+    border-left: 1px solid var(--lightColor);
+}
+
+#left-card .resume-menu li > a i {
+    margin-left: 15px;
+    position: relative;
+    font-size: 19px;
+    top: 2px;
+}
+
+#right-card {
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: var(--lightColor);
+}
+
+#right-card .card-body {
+    padding: 0;
+}
+
+.page-title {
+    padding: 5px 0 15px;
+    position: relative;
+    font-family: "微软雅黑", Arial, sans-serif !important;
+}
+
+.page-subtitle {
+    padding: 5px 0 5px;
+    position: relative;
+    margin-bottom: 10px;
+    font-family: "微软雅黑", Arial, sans-serif !important;
+}
+
+.page-subtitle h2 {
+    font-weight: 400 !important;
+    color: var(--mainColor);
+}
+
+.page-title:after {
+    position: absolute;
+    width: 72px;
+    height: 3px;
+    background-color: #ffd42d;
+    bottom: 0;
+    left: 0;
+    content: '';
+}
+
+.page-subtitle:after {
+    position: absolute;
+    width: 55px;
+    height: 2px;
+    background-color: #ffd42d;
+    bottom: 0;
+    left: 0;
+    content: '';
+}
+
+
+.page-header {
+    padding: 15px 30px 0;
+    height: auto;
+}
+
+.page-title h1 {
+    margin: 0;
+    display: block;
+    color: var(--mainColor);
+    font-family: "微软雅黑 Light", "微软雅黑", Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 400 !important;
+}
+
+.page-title .first-title {
+    font-weight: 400 !important;
+}
+
+.page-title .first-title strong {
+    font-family: "微软雅黑", Arial, sans-serif !important;
+    font-weight: 600 !important;
+}
+
+.page-content {
+    padding: 10px 30px 20px;
+}
+
+.my-introduce {
+    height: auto;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #999;
+    font-family: "微软雅黑", Arial, sans-serif !important;
+
+}
+
+hr {
+    background-color: #f2f2f2 !important;
+}
+
+.my-info-form {
+    width: 480px;
+    padding-top: 15px;
+}
+
+.my-info-form .input-group-prepend {
+    width: 100px;
+}
+
+.my-info-form .input-group-prepend .input-group-text {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    color: #999;
+}
+
+.my-info-form .form-control {
+    background-color: #f5f5f5;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: #ddd;
+}
+
+
+.job-item .job-itme-header {
+    font-size: 14px;
+    color: var(--mainColor);
+}
+
+.job-item .job-header-top {
+    display: flex;
+    padding-bottom: 8px;
+    justify-content: space-between;
+}
+
+.project-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.job-item .job-time {
+    font-size: 14px;
+}
+
+.job-item .job-header-bottom {
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-item .job-itme-header .job-item-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--mainColor);
+}
+
+.job-item {
+    margin-bottom: 25px;
+}
+
+.job-item .jobs strong {
+    font-weight: bold;
+}
+
+.job-item .job-itme-header .job-time > i {
+    margin-right: 8px;
+}
+
+.job-itme-body {
+    color: #999;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.job-itme-body ul li {
+    line-height: 1.85;
+}
+
+.job-itme-body p {
+    line-height: 1.75;
+}
+
+
+.job-itme-body .project-description {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.job-itme-body .project-description .project-description-text {
+    line-height: 1.75;
+}
+
+.job-itme-body .desc-title {
+    flex: 0 0 70px;
+    font-weight: bold;
+}
+
+.job-itme-body .project-description .project-screenshot {
+    flex: 1;
+    height: 50px;
+    border: 1px solid red;
+}
+
+@media (max-width: 992px) {
+    #left-card .resume-menu li > a {
+        font-size: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #left-card .resume-menu li > a i {
+        margin-left: 10px;
+        position: relative;
+        font-size: 16px;
+        top: 2px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .layout-page {
+        padding-top: 0;
+        overflow: auto;
+    }
+
+    .layout-page .container {
+        /*max-width: 100% !important;*/
+        border: 1px solid #ddd;
+    }
+
+    #left-card .resume-menu {
+        width: 100%;
+        height: 65px;
+        display: flex;
+        background-color: var(--darkColor);
+        border-bottom: 1px solid var(--lightColor);
+    }
+
+    #left-card .resume-menu li {
+        flex: 1;
+    }
+
+    .resume-box-item {
+        height: auto;
+        padding: 0 !important;
+    }
+
+    #resume-box {
+        height: auto;
+    }
+
+    #left-card .resume-menu li > a span {
+        display: none;
+    }
+
+    #left-card .resume-menu li > a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    #left-card .resume-menu li > a.active {
+        border: 0 !important;
+    }
+
+    #right-card {
+        min-height: 500px;
+        border: 0;
+    }
+
+    #left-card .resume-menu li > a i {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .my-info-form {
+        width: 100%;
+    }
+
+    .my-info-form .form-control,
+    .my-info-form .input-group-text {
+        font-size: 12px;
+    }
+
+    .page-title {
+        padding-top: 12px !important;
+    }
+
+    .page-title h1:not(.first-title) {
+        font-size: 20px;
+    }
+
+    .page-title .first-title {
+        font-size: 24px;
+    }
+
+    body {
+        position: relative;
+        font-family: "微软雅黑", Arial, sans-serif;
+        background-color: #FFF;
+    }
+
+    .page-header {
+        padding: 15px 20px 0;
+    }
+
+    .page-content {
+        padding: 10px 20px 20px;
+    }
+
+    .job-itme-body .project-description {
+        display: block;
+    }
+
+    .job-itme-body .desc-title{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .my-introduce {
+        font-size: 14px !important;
+    }
 }
