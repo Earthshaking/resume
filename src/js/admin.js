@@ -1155,8 +1155,64 @@ layui.define(['view'], function (exports) {
             });
             
             initChangeEvent();
-        }
+        },
         
+        setCenter: function () {
+            //获取div的id元素
+            var box = document.getElementById("resume-box");
+            //可视区域高度
+            var cheight = document.documentElement.clientHeight || document.body.clientHeight;
+            //可视区域宽度
+            var cwidth = document.documentElement.clientWidth || document.body.clientWidth;
+            //获取登录框宽度
+            var lwidth = box.offsetWidth;
+            //获取登录框高度
+            var lheight = box.offsetHeight;
+            //设置登录框的居中显示
+            box.style.left = (cwidth - lwidth) / 2 + "px";
+            box.style.top = (cheight - lheight) / 2 + "px";
+            // onresize 事件会在窗口或框架被调整大小时发生。
+            window.onresize = function () {
+                //CSS1Compat：标准兼容模式开启。BackCompat：标准兼容模式关闭。
+                if (document.compatMode == "CSS1Compat") {
+                    cwidth = document.documentElement.clientWidth;//从新获取浏览器的宽度
+                    cheight = document.documentElement.clientHeight;//从新获取浏览器的高度
+                }
+                box.style.left = (cwidth - lwidth) / 2 + "px";
+                box.style.top = (cheight - lheight) / 2 + "px";
+                box.style.height = cheight + "px";
+            }
+        },
+        
+        initLightgallery: function () {
+            $(".project-screenshot").each(function (e) {
+                var $this = $(this),
+                    id = $this.attr('id');
+                $('#' + id).lightGallery({
+                    closable: false
+                });
+            });
+        },
+        
+        initMagnify: function () {
+            $('[data-magnify=gallery]').magnify({
+                initMaximized: admin.terminal('mobile') ? true : false,
+                title: false,
+                headToolbar: [
+                    'maximize',
+                    'close'
+                ],
+                footToolbar: [
+                    'zoomIn',
+                    'zoomOut',
+                    'prev',
+                    'fullscreen',
+                    'next',
+                    'actualSize',
+                    'rotateRight'
+                ],
+            });
+        }
     };
     
     // 事件
@@ -1430,8 +1486,15 @@ layui.define(['view'], function (exports) {
         // 退出登录
         logout: function () {
             layer.msg("退出登录成功", {icon: 1});
-        }
+        },
         
+        themeBox: function () {
+            $("#customizer").toggleClass('s-close s-open');
+        },
+        
+        styleswitch: function () {
+        
+        }
     };
     
     // 初始
@@ -1652,10 +1715,9 @@ layui.define(['view'], function (exports) {
     });
     
     
-    
-    
     // 窗口resize事件
     var resizeSystem = layui.data.resizeSystem = function () {
+        
         //layer.close(events.note.index);
         layer.closeAll('tips');
         

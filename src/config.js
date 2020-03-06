@@ -34,7 +34,10 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function (exports) {
         indPage: [],                         // 独立页面路由，可随意添加（无需写参数）
         // 接口地址前缀
         apiPath: '',
-        extend: []                           // 扩展的第三方模块
+        theme: {
+            type: 'blue',
+            full: false,
+        }
     });
     
 });

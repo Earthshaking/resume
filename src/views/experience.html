@@ -1,6 +1,6 @@
 <title>项目经验</title>
 
-<div class="container-box">
+<div class="container-box animated fadeIn">
     <div class="page-header">
         <div class="page-title">
             <h1 class="h3">项目经验</h1>
@@ -9,8 +9,8 @@
     
     <div class="page-content">
         <br>
-        
-        <script type="text/html" template lay-url="./data/project.json">
+        <!-- lay-done="layui.admin.initLightgallery();" -->
+        <script type="text/html" template lay-url="./data/project.json" lay-done="layui.admin.initMagnify();">
             {{# layui.each(d.data, function(index, item){}}
             <div class="job-item">
                 <div class="job-itme-header">
@@ -50,9 +50,9 @@
                     {{# if (item.img.length > 0) { }}
                     <div class="project-description">
                         <span class="text-dark desc-title">项目截图：</span>
-                        <div class="project-screenshot">
+                        <div class="project-screenshot" id="lightgallery{{index}}">
                             {{# layui.each(item.img, function(index1, item1){}}
-                            <a data-magnify="gallery" data-caption="项目截图" href="{{ item1 }}" class="project-img-item rounded img-thumbnail" title="点击放大查看">
+                            <a data-magnify="gallery" data-group="magnifyGroup{{index}}" data-caption="项目截图" href="{{ item1 }}" data-title="项目截图" class="project-img-item rounded img-thumbnail" title="点击放大查看">
                                 <img src="{{ item1 }}" alt="">
                             </a>
                             {{# }); }}
@@ -70,6 +70,7 @@
 </div>
 
 <script>
+    
     layui.use(['admin', 'layer', 'view'], function () {
         
         var $ = layui.$,
@@ -78,34 +79,5 @@
             view = layui.view,
             global = layui.global,
             content = $(".content");
-        
-        $('[data-magnify=gallery]').magnify({
-            title: false,
-            headToolbar: [
-                'close'
-            ],
-            footToolbar: [
-                'zoomIn',
-                'zoomOut',
-                'prev',
-                'fullscreen',
-                'next',
-                'actualSize',
-                'rotateRight'
-            ],
-            i18n: {
-                minimize: "最小化",
-                maximize: "最大化",
-                close: "关闭",
-                zoomIn: "放大",
-                zoomOut: "缩小",
-                prev: "上一张",
-                next: "下一张",
-                fullscreen: "全屏",
-                actualSize: "实际尺寸",
-                rotateLeft: "向左旋转",
-                rotateRight: "向右旋转"
-            },
-        });
     });
 </script>

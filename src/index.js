@@ -141,8 +141,6 @@ layui.extend({
         
         // 入口页面
         entryPage = function (fn) {
-            admin.disableEvent();
-            
             var router = layui.router(),
                 container = view(setter.container),
                 local = layui.data(setter.tableName),
@@ -189,6 +187,12 @@ layui.extend({
                             var $this = $(this);
                             $this.addClass('active').parent('li').siblings('li').find('a').removeClass('active');
                         });
+                        $menu.find("[lay-href]").each(function () {
+                            var $this = $(this);
+                            if ($this.attr('lay-href') == pathURL) {
+                                $this.addClass('active').parent('li').siblings('li').find('a').removeClass('active');
+                            }
+                        });
                         
                         admin.pageType = 'console';
                     });
@@ -210,6 +214,7 @@ layui.extend({
         },
         'layuiAdmin'
     );
+    layui.link(setter.base + 'css/theme/'+ setter.theme.type +'.css?v=' + (admin.v + '-1'));
     layui.link(setter.base + 'css/font-awesome/css/font-awesome.min.css?v=' + (admin.v + '-1'));
     layui.link(setter.base + 'css/animate.css?v=' + (admin.v + '-1'));
     layui.link(setter.base + 'css/custom-global.css?v=' + (admin.v + '-1'));

@@ -7,18 +7,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --transition: all 200ms ease;
-    --mainColor: #3B5998;
-    --mainColor2: #3E4E72;
-    --darkColor: #29365d;
-    --darkColor2: #132D63;
-    --lightColor: #839CCF;
-    --lightColor2: #6E8CCC;
-    --whiteColor: #FFF;
-    --whiteColor2: #F2F2F2;
-}
-
 /*-------------------------------------------------
                 滚动条样式
  -------------------------------------------------*/
@@ -86,7 +74,7 @@ body:after, body:before {
     pointer-events: none;
 }
 
-body.custom-bg:before {
+body.bg-img:before {
     background-image: url("../img/code-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -95,8 +83,24 @@ body.custom-bg:before {
     content: '';
 }
 
-body.custom-bg:after {
+body.bg-img:after {
     background-color: rgba(34, 34, 34, 0.3);
+    z-index: 2;
+    content: '';
+}
+
+
+body.bg-wall:before {
+    background-image: url("../img/wall-2.png");
+    /*background-size: cover;*/
+    background-repeat: repeat;
+    background-position: center;
+    z-index: 1;
+    content: '';
+}
+
+body.bg-wall:after {
+    background-color: rgba(34, 34, 34, 0.1);
     z-index: 2;
     content: '';
 }
@@ -107,10 +111,27 @@ body.custom-bg:after {
     position: relative;
     z-index: 3;
     padding-top: 120px;
+    overflow: auto;
+    /*overflow: hidden;*/
+}
+
+.layout-page.full {
+    padding: 0;
+}
+
+.layout-page.full .container {
+    max-width: 100% !important;
+    height: 100%;
+    padding: 0;
 }
 
 #resume-box {
-    height: 620px;
+    height: auto;
+    margin-bottom: 60px;
+}
+
+.layout-page.full #resume-box {
+    height: 100% !important;
 }
 
 .resume-box-item {
@@ -119,6 +140,12 @@ body.custom-bg:after {
 
 .resume-box-item.left {
     padding-right: 0;
+    height: 620px;
+}
+
+.layout-page.full .resume-box-item.left {
+    padding-right: 0;
+    height: 100%;
 }
 
 .resume-box-item.right {
@@ -132,7 +159,7 @@ body.custom-bg:after {
 }
 
 #left-card {
-
+    height: 100%;
 }
 
 #left-card .card-body {
@@ -239,6 +266,8 @@ body.custom-bg:after {
 }
 
 #right-card {
+    height: 100%;
+    min-height: 620px;
     border-width: 1px 1px 1px 0;
     border-style: solid;
     border-color: var(--lightColor);
@@ -270,7 +299,7 @@ body.custom-bg:after {
     position: absolute;
     width: 72px;
     height: 3px;
-    background-color: #ffd42d;
+    background-color: var(--pageHeaderColor);
     bottom: 0;
     left: 0;
     content: '';
@@ -280,7 +309,7 @@ body.custom-bg:after {
     position: absolute;
     width: 55px;
     height: 2px;
-    background-color: #ffd42d;
+    background-color: var(--pageHeaderColor);
     bottom: 0;
     left: 0;
     content: '';
@@ -465,9 +494,10 @@ hr {
 /*----------------------
      图片弹窗样式
  ----------------------*/
-.magnify-modal button{
+.magnify-modal button {
     outline: 0 !important;
 }
+
 .magnify-modal {
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
 }
@@ -524,7 +554,194 @@ hr {
     border-color: #aaa;
 }
 
+
+#customizer {
+    position: fixed;
+    top: 64px;
+    z-index: 999999;
+    height: 100%;
+}
+
+.s-open {
+    right: 0 !important;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.s-close {
+    right: -205px !important;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    /*background: url(../img/switcher/corner-open.png);*/
+    position: absolute;
+    color: #FFF;
+    background-color: var(--darkColor);
+    top: 50px;
+    left: -50px;
+    font-size: 22px;
+}
+
+#options {
+    width: 205px;
+    height: 378px;
+    background: #fff;
+    padding: 0;
+    position: relative;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.options-head {
+    background: var(--darkColor);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.headers-sel {
+    padding: 15px;
+    margin-bottom: 0;
+}
+
+#options h6 {
+    color: #5c5c5c;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.color-head {
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    color: #525252;
+    line-height: 40px !important;
+    background-position: 92.5% 50%;
+    margin-bottom: 15px !important;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.version {
+    padding: 0;
+    margin-bottom: -20px;
+    display: flex;
+    width: 100%;
+}
+
+.version li {
+    list-style: none;
+    width: 50%;
+    margin: 0 5px;
+}
+
+.version li a {
+    padding: 21px;
+    /*display: table;*/
+    display: block;
+    border: 1px solid red;
+}
+
+.lite, .lite:hover {
+    background: #f3f3f3 !important;
+    color: #7f7f7f !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dark, .dark:hover {
+    background: #7f7f7f !important;
+    color: #fff !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.colors-sel {
+    padding: 20px 25px 15px;
+    margin-bottom: 0;
+}
+
+.color-scheme {
+    padding: 0;
+}
+
+.color-scheme li {
+    float: left;
+    list-style: none;
+}
+
+.color-scheme a:hover,
+.color-scheme a {
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin: 0 4.25px 10px;
+}
+
+.green a {
+    background: url(../img/switcher/3.png);
+}
+
+.orange a {
+    background: url(../img/switcher/7.png);
+}
+
+.blue a {
+    background: url(../img/switcher/1.png);
+}
+
+.red a {
+    background: url(../img/switcher/8.png);
+}
+
+.violet a {
+    background: url(../img/switcher/4.png);
+}
+
+.pale-green a {
+    background: url(../img/switcher/6.png);
+}
+
+.yellow a {
+    background: url(../img/switcher/5.png);
+}
+
+.fblack a {
+    background: url(../img/switcher/2.png);
+}
+
+
 @media (max-width: 992px) {
+
+    .layout-page .container {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
     #left-card .resume-menu li > a {
         font-size: 15px;
         padding-left: 20px;
@@ -566,6 +783,34 @@ hr {
 
 @media (max-width: 768px) {
 
+    .layout-page.full #resume_app_body {
+        overflow: hidden;
+    }
+
+    .layout-page.full #right-card {
+        height: auto;
+        min-height: 620px;
+    }
+
+    .layout-page.full {
+        padding: 0;
+    }
+
+    .layout-page.full .container {
+        /*max-width: 100% !important;*/
+        height: 100%;
+        padding: 0 15px;
+    }
+
+    .layout-page.full .resume-box-item.left {
+        padding-right: 0;
+        height: auto;
+    }
+
+    .layout-page .resume-box-item.left {
+        height: auto;
+    }
+
     .layout-page {
         padding-top: 0;
         overflow: auto;
@@ -593,8 +838,14 @@ hr {
         padding: 0 !important;
     }
 
+    #left-card,
+    .layout-page.full #resume-box,
     #resume-box {
         height: auto;
+    }
+
+    #resume-box {
+        margin-bottom: 0 !important;
     }
 
     #left-card .resume-menu li > a span {
@@ -641,7 +892,14 @@ hr {
     }
 
     .page-title .first-title {
-        font-size: 24px;
+        /*font-size: 24px;*/
+        font-weight: 500 !important;
+        font-family: "微软雅黑", Arial, sans-serif;
+    }
+
+    .page-title h1 {
+        font-weight: 500 !important;
+        font-family: "微软雅黑", Arial, sans-serif;
     }
 
     body {

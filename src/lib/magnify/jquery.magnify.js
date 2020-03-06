@@ -412,17 +412,17 @@ var $W = $(window),
 
     // Customize language of button title
     i18n: {
-      minimize: 'minimize',
-      maximize: 'maximize',
-      close: 'close',
-      zoomIn: 'zoom-in(+)',
-      zoomOut: 'zoom-out(-)',
-      prev: 'prev(←)',
-      next: 'next(→)',
-      fullscreen: 'fullscreen',
-      actualSize: 'actual-size(Ctrl+Alt+0)',
-      rotateLeft: 'rotate-left(Ctrl+,)',
-      rotateRight: 'rotate-right(Ctrl+.)'
+      minimize: "最小化",
+      maximize: "最大化",
+      close: "关闭",
+      zoomIn: "放大(+)",
+      zoomOut: "缩小(-)",
+      prev: "上一张(←)",
+      next: "下一张(→)",
+      fullscreen: "全屏",
+      actualSize: "实际尺寸(Ctrl+Alt+0)",
+      rotateLeft: "向左旋转(Ctrl+,)",
+      rotateRight: "向右旋转(Ctrl+.)"
     },
 
     // Enable multiple instances
@@ -2160,7 +2160,7 @@ var resizable = function (modal, stage, image, minWidth, minHeight) {
     // Set grab cursor
     if (PUBLIC_VARS['isResizing']) {
       setGrabCursor(
-        { w: imgWidth, h: imgHeight }, 
+        { w: imgWidth, h: imgHeight },
         { w: $(stage).width(), h: $(stage).height() },
         stage
       );
