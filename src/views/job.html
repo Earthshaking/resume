@@ -9,57 +9,33 @@
     
     <div class="page-content">
         <br>
-        <div class="job-item">
-            <div class="job-itme-header">
-                <div class="job-header-top">
-                    <span class="jobs"><strong>WEB 前端开发</strong> | 研发部</span>
-                    <span class="job-time"><i class="fa fa-calendar"></i>2018/10-至今</span>
-                </div>
-                <div class="job-item-line"></div>
-                <div class="job-header-bottom">
+        <script type="text/html" template lay-url="./data/job.json">
+            {{# layui.each(d.data, function(index, item){}}
+            <div class="job-item">
+                <div class="job-itme-header">
+                    <div class="job-header-top">
+                        <span class="jobs"><strong>{{item.position}}</strong> | {{item.department}}</span>
+                        <span class="job-time"><i class="fa fa-calendar"></i>{{item.time}}</span>
+                    </div>
+                    <div class="job-item-line"></div>
+                    <div class="job-header-bottom">
                     <span class="company-name">
                         <i class="fa fa-briefcase mr5"></i>
-                        湖南立森数据技术有限公司
+                        {{item.company}}
                     </span>
-                    <span>
-                        计算机软件 | 民营公司
+                        <span>
+                        {{item.companyPosition}} | {{item.companyType}}
                     </span>
+                    </div>
+                </div>
+                <div class="job-itme-body">
+                    <p class="job-description"><strong class="text-dark">工作描述：</strong>
+                    {{item.description}}
+                    </p>
                 </div>
             </div>
-            <div class="job-itme-body">
-                <p class="job-description"><strong class="text-dark">工作描述：</strong> 参与公司现有项目的二次开发工作，负责新项目的前端页面开发。
-                                                                                    根据设计效果图编写html页面，并兼容各主流浏览器。
-                                                                                    优化产品界面，提高用户体验，与设计师和后台程序配合，高效率高质量地完成前端页面的实现工作。
-                                                                                    参与讨论项目分工和编写工作计划，与其他技术人员沟通并制定设计规范。
-                </p>
-            </div>
-        </div>
-        
-        <div class="job-item">
-            <div class="job-itme-header">
-                <div class="job-header-top">
-                    <span class="jobs"><strong>WEB 前端开发工程师</strong> | 开发部</span>
-                    <span class="job-time"><i class="fa fa-calendar"></i>2017/8-2018/9</span>
-                </div>
-                <div class="job-item-line"></div>
-                <div class="job-header-bottom">
-                    <span class="company-name">
-                        <i class="fa fa-briefcase mr5"></i>
-                        广州朝华信息科技有限公司
-                    </span>
-                    <span>
-                        计算机服务(系统、数据服务、维修) | 民营公司
-                    </span>
-                </div>
-            </div>
-            <div class="job-itme-body">
-                <p class="job-description"> <strong class="text-dark">工作描述：</strong> 参与公司现有项目的二次开发工作，负责新项目的前端页面开发。
-                   根据设计效果图编写html页面，并兼容各主流浏览器。
-                   优化产品界面，提高用户体验，与设计师和后台程序配合，高效率高质量地完成前端页面的实现工作。
-                   参与讨论项目分工和编写工作计划，与其他技术人员沟通并制定设计规范。</p>
-            </div>
-        </div>
-    
+            {{# }); }}
+        </script>
     </div>
 </div>
 

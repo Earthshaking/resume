@@ -8,6 +8,7 @@
     <title>WEB RESUME</title>
     <!-- CSS -->
     <link href="src/lib/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="src/lib/magnify/jquery.magnify.min.css" rel="stylesheet" type="text/css">
     <link href="src/lib/layui/css/layui.css" media="all" rel="stylesheet" type="text/css">
     
     <!--[if lt IE 9]>
@@ -19,18 +20,21 @@
         /^http(s*):\/\//.test(location.href) || alert('请先部署到 localhost 下再访问');
     </script>
 </head>
-<body>
+<body class="custom-bg s">
 
 <div id="RESUME_app"></div>
 
 <script src="src/lib/jquery-2.1.1.js"></script>
 <script src="src/lib/bootstrap-4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="src/lib/magnify/jquery.magnify.js"></script>
 <script src="src/lib/layui/layui.js"></script>
 <script>
+    
     layui.config({
         base: 'src/',
         version: '1.2.1'
     }).use('index');
+    
 </script>
 </body>
 </html>
