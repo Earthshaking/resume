@@ -10,16 +10,17 @@ layui.define('global',function (exports) {
         view = layui.view,
         util = layui.util,
         admin = layui.admin;
-
+    
+    
     /*
     Unable to infer base url. This is common when using dynamic servlet registration or when the API is behind an API Gateway. The base url is the root of where all the swagger resources are served. For e.g. if the api is available at http://example.org/api/v2/api-docs then the base url is http://example.org/api/. Please enter the location manually:
-     */
-    if (!admin.terminal('mobile')) {
-        $('.area').perfectScrollbar({
-            cursorwidth: 6,
-        });
-        $('.sidebar-body').perfectScrollbar();
-    }
+    //  */
+    // if (!admin.terminal('mobile')) {
+    //     $('.area').perfectScrollbar({
+    //         cursorwidth: 6,
+    //     });
+    //     $('.sidebar-body').perfectScrollbar();
+    // }
     
     //对外暴露的接口
     exports('common', {});

@@ -1197,7 +1197,10 @@ layui.define(['view'], function (exports) {
         initMagnify: function () {
             $('[data-magnify=gallery]').magnify({
                 initMaximized: admin.terminal('mobile') ? true : false,
-                title: false,
+                title: true,
+                // fixedModalSize: true,
+                // modalWidth: 500,
+                // modalHeight: 500,
                 headToolbar: [
                     'maximize',
                     'close'

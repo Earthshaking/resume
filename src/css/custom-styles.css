@@ -39,6 +39,10 @@
 
 /*---------------------------*/
 
+.layui-layout-body {
+    overflow: auto !important;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -60,7 +64,7 @@ html, body {
 body {
     position: relative;
     font-family: "微软雅黑", Arial, sans-serif;
-    background-color: #D9DBDD;
+    background-color: transparent;
 }
 
 body:after, body:before {
@@ -83,35 +87,35 @@ body.bg-img:before {
     content: '';
 }
 
+
 body.bg-img:after {
     background-color: rgba(34, 34, 34, 0.3);
     z-index: 2;
     content: '';
 }
 
-
-body.bg-wall:before {
+body.bg-wall {
     background-image: url("../img/wall-2.png");
-    /*background-size: cover;*/
     background-repeat: repeat;
+    background-attachment: fixed;
     background-position: center;
     z-index: 1;
     content: '';
 }
 
+
 body.bg-wall:after {
-    background-color: rgba(34, 34, 34, 0.1);
+    background-color: rgba(34, 34, 34, 0);
     z-index: 2;
     content: '';
 }
 
 .layout-page {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
     z-index: 3;
     padding-top: 120px;
-    overflow: auto;
     /*overflow: hidden;*/
 }
 
@@ -126,6 +130,7 @@ body.bg-wall:after {
 }
 
 #resume-box {
+    position: relative;
     height: auto;
     margin-bottom: 60px;
 }
@@ -734,6 +739,26 @@ hr {
     background: url(../img/switcher/2.png);
 }
 
+.skill-list {
+    /*border: 1px solid red;*/
+}
+
+.skill-list .skill-list-item {
+    display: flex;
+    min-height: 35px;
+    /*border: 1px solid red;*/
+    align-items: center;
+    padding: 15px 0;
+}
+
+.skill-list .skill-list-item .skill-text {
+    width: 100px;
+    font-weight: bold;
+}
+
+.skill-list .skill-list-item .progress {
+    flex: 1;
+}
 
 @media (max-width: 992px) {
 
@@ -783,6 +808,28 @@ hr {
 
 @media (max-width: 768px) {
 
+    body{
+        background-image: none !important;
+        background-color: #FFF !important;
+    }
+
+    .job-item .job-header-top {
+        flex-wrap: wrap;
+    }
+
+    .job-item .job-header-top > span {
+        display: block;
+        width: 100%;
+    }
+
+    .job-item .job-header-top .project-name {
+        margin-bottom: 5px;
+    }
+
+    .job-itme-body {
+        padding-top: 0;
+    }
+
     .layout-page.full #resume_app_body {
         overflow: hidden;
     }
@@ -818,7 +865,7 @@ hr {
 
     .layout-page .container {
         /*max-width: 100% !important;*/
-        border: 1px solid #ddd;
+        /*border: 1px solid #ddd;*/
     }
 
     #left-card .resume-menu {
