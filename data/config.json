@@ -1,0 +1,76 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": {
+        "name": "方凌松",
+        "job": "WEB 前端开发工程师",
+        "preface": [
+            "我拥有丰富的前端开发经验。",
+            "我喜欢干净，优雅的样式，并且在生产用于现代网站的CSS和（X）HTML方面有丰富的经验。我对使用JavaScript框架（特别是jQuery）有一定的了解。"
+        ],
+        "basicInfo": [
+            {
+                "name": "姓名",
+                "value": "方凌松"
+            },
+            {
+                "name": "性别",
+                "value": "男"
+            },
+            {
+                "name": "出生日期",
+                "value": "1997-06-24"
+            },
+            {
+                "name": "地址",
+                "value": "湖南长沙"
+            },
+            {
+                "name": "电子邮箱",
+                "value": "1344085370@qq.com"
+            },
+            {
+                "name": "联系电话",
+                "value": "18874814818"
+            }
+        ],
+        "selfEval": [
+            "有一定的软件开发经验，负责过 web、J2EE 项目开发，尤其擅长项目前端设计与开发业务；熟悉 java 开发语言，了解 javaEE 体系架构.",
+            "熟悉页面布局、重构，了解w3c标准。能熟练运用响应式布局和弹性盒布局以及百分比自适应布局。",
+            "掌握 layui，vue，bootstrap，easy-ui 与 jquery-ui 等前端框架。",
+            "擅长将网页原图模型转化成静态网页，且对HTML5与CSS3.0以及HTML语义化有一定的了解",
+            "熟练运用浏览器兼容技术，数据接口处理，前端性能优化设计，有一定美术功底及网页设计能力",
+            "熟练使用 Webstorm，IDEA，HBuilder，nodepad++，eclipse，photoshop 等相关开发工具",
+            "熟悉Tomcat服务器。熟悉 Maven、SVN、Git",
+            "掌握主流数据库Oracle、MySQL的使用，具备良好的SQL设计编写能力",
+            "了解 Struts2、Spring、Hibernate、SpringMVC、MyBatis 框架及SSM、SSH整合框架"
+        ],
+        "finally": "本人思维灵活，喜爱项目开发与设计，逻辑能力强。为人和善，待人大方幽默，善于调动工作氛围。对互联网产品和Web技术有着强烈兴趣。工作中能吃苦肯钻研，能承受工作压力，注重长期稳定的发展，能够适应不同类型公司的发展要求。",
+        "skills": [
+            {
+                "name": "JavaScript",
+                "level": "熟练"
+            },
+            {
+                "name": "Java",
+                "level": "良好"
+            },
+            {
+                "name": "HTML5",
+                "level": "熟练"
+            },
+            {
+                "name": "MySQL",
+                "level": "熟练"
+            },
+            {
+                "name": "jquery",
+                "level": "精通"
+            },
+            {
+                "name": "Bootstrap",
+                "level": "精通"
+            }
+        ]
+    }
+}

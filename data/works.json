@@ -1,0 +1,232 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": {
+        "group": [
+            {
+                "id": 1,
+                "name": "基金委"
+            },
+            {
+                "id": 2,
+                "name": "长沙教育考试院"
+            },
+            {
+                "id": 3,
+                "name": "漳泽大坝系统"
+            },
+            {
+                "id": 4,
+                "name": "铁道学会"
+            },
+            {
+                "id": 5,
+                "name": "智脑"
+            },
+            {
+                "id": 6,
+                "name": "年鉴编撰系统"
+            }
+        ],
+        "list": [
+            {
+                "title": "基金委项目截图",
+                "src": "src/img/project/ces/img (1).jpg",
+                "groupId": 1,
+                "info": ""
+            },
+            {
+                "title": "基金委项目截图",
+                "src": "src/img/project/ces/img (2).png",
+                "groupId": 1,
+                "info": ""
+            },
+            {
+                "title": "基金委项目截图",
+                "src": "src/img/project/ces/img (3).png",
+                "groupId": 1,
+                "info": ""
+            },
+            {
+                "title": "基金委项目截图",
+                "src": "src/img/project/ces/img (4).png",
+                "groupId": 1,
+                "info": ""
+            },
+            {
+                "title": "基金委项目截图",
+                "src": "src/img/project/ces/img (5).png",
+                "groupId": 1,
+                "info": ""
+            },
+            {
+                "title": "基金委项目截图",
+                "src": "src/img/project/ces/img (6).png",
+                "groupId": 1,
+                "info": ""
+            },
+            {
+                "title": "长沙教育考试院项目截图",
+                "src": "src/img/project/ksy/img (1).jpg",
+                "groupId": 2,
+                "info": ""
+            },
+            {
+                "title": "长沙教育考试院项目截图",
+                "src": "src/img/project/ksy/img (2).jpg",
+                "groupId": 2,
+                "info": ""
+            },
+            {
+                "title": "长沙教育考试院项目截图",
+                "src": "src/img/project/ksy/img (3).jpg",
+                "groupId": 2,
+                "info": ""
+            },
+            {
+                "title": "漳泽水库大坝安全监测系统项目截图",
+                "src": "src/img/project/db/img (1).jpg",
+                "groupId": 3,
+                "info": ""
+            },
+            {
+                "title": "漳泽水库大坝安全监测系统项目截图",
+                "src": "src/img/project/db/img (2).jpg",
+                "groupId": 3,
+                "info": ""
+            },
+            {
+                "title": "漳泽水库大坝安全监测系统项目截图",
+                "src": "src/img/project/db/img (3).jpg",
+                "groupId": 3,
+                "info": ""
+            },
+            {
+                "title": "漳泽水库大坝安全监测系统项目截图",
+                "src": "src/img/project/db/img (4).jpg",
+                "groupId": 3,
+                "info": ""
+            },
+            {
+                "title": "中国铁道学会项目截图",
+                "src": "src/img/project/tdxh/img (1).jpg",
+                "groupId": 4,
+                "info": ""
+            },
+            {
+                "title": "中国铁道学会项目截图",
+                "src": "src/img/project/tdxh/img (2).jpg",
+                "groupId":4,
+                "info": ""
+            },
+            {
+                "title": "中国铁道学会项目截图",
+                "src": "src/img/project/tdxh/img (3).jpg",
+                "groupId": 4,
+                "info": ""
+            },
+            {
+                "title": "中国铁道学会项目截图",
+                "src": "src/img/project/tdxh/img (4).jpg",
+                "groupId": 4,
+                "info": ""
+            },
+            {
+                "title": "中国铁道学会项目截图",
+                "src": "src/img/project/tdxh/img (5).jpg",
+                "groupId": 4,
+                "info": ""
+            },
+            {
+                "title": "中国铁道学会项目截图",
+                "src": "src/img/project/tdxh/img (6).jpg",
+                "groupId": 4,
+                "info": ""
+            },
+            {
+                "title": "中国铁道学会项目截图",
+                "src": "src/img/project/tdxh/img (7).jpg",
+                "groupId": 4,
+                "info": ""
+            },
+            {
+                "title": "智脑项目截图",
+                "src": "src/img/project/zn/img (1).jpg",
+                "groupId": 5,
+                "info": ""
+            },
+            {
+                "title": "智脑项目截图",
+                "src": "src/img/project/zn/img (2).jpg",
+                "groupId": 5,
+                "info": ""
+            },
+            {
+                "title": "智脑项目截图",
+                "src": "src/img/project/zn/img (3).jpg",
+                "groupId": 5,
+                "info": ""
+            },
+            {
+                "title": "智脑项目截图",
+                "src": "src/img/project/zn/img (4).jpg",
+                "groupId": 5,
+                "info": ""
+            },
+            {
+                "title": "智脑项目截图",
+                "src": "src/img/project/zn/img (5).jpg",
+                "groupId": 5,
+                "info": ""
+            },
+            {
+                "title": "年鉴编撰系统项目截图",
+                "src": "src/img/project/nj/img (1).jpg",
+                "groupId": 6,
+                "info": ""
+            },
+            {
+                "title": "年鉴编撰系统项目截图",
+                "src": "src/img/project/nj/img (2).jpg",
+                "groupId": 6,
+                "info": ""
+            },
+            {
+                "title": "年鉴编撰系统项目截图",
+                "src": "src/img/project/nj/img (3).jpg",
+                "groupId": 6,
+                "info": ""
+            },
+            {
+                "title": "年鉴编撰系统项目截图",
+                "src": "src/img/project/nj/img (4).jpg",
+                "groupId": 6,
+                "info": ""
+            },
+            {
+                "title": "年鉴编撰系统项目截图",
+                "src": "src/img/project/nj/img (5).jpg",
+                "groupId": 6,
+                "info": ""
+            },
+            {
+                "title": "年鉴编撰系统项目截图",
+                "src": "src/img/project/nj/img (6).jpg",
+                "groupId": 6,
+                "info": ""
+            },
+            {
+                "title": "年鉴编撰系统项目截图",
+                "src": "src/img/project/nj/img (7).jpg",
+                "groupId": 6,
+                "info": ""
+            },
+            {
+                "title": "年鉴编撰系统项目截图",
+                "src": "src/img/project/nj/img (8).jpg",
+                "groupId": 6,
+                "info": ""
+            }
+        ]
+    }
+}

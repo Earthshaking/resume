@@ -9,12 +9,12 @@
             "projectDesc": "要求以现有CES会议评审系统为基础，升级改造为 C/S + B/S + U盘硬件的混合架构模式的新版 CES会议评审系统（第三代）。以满足国家自然科学基金会议评审需求灵活多变的需要，构建一个方便快捷、灵活配置、安全可靠的网络评审系统。在确保专家和会议管理人员评审和管理习惯不变的前提下，对系统底层进行改造，增强系统可配置能力，以应对评审工作灵活多变的需要，为基金委的会评工作提供完善的技术保障服务。",
             "jobDesc": "主要负责前端页面的编写，依旧使用最熟练的 Bootstrap 来布局。项目采用前后端分离的模式进行开发。根据旧版程序界面定好新的页面与风格，使用原生 javascript 编写了一套路由机制，实现页面的无刷新跳转。使用 artTemplate.js 模板引擎对前端视图进行数据解析和渲染，并展现动态效果和并操作DOM。对页面进行外观美化和功能的完善。",
             "img": [
-                "src/img/project/ces/img-1.jpg",
-                "src/img/project/ces/img-2.png",
-                "src/img/project/ces/img-3.png",
-                "src/img/project/ces/img-4.png",
-                "src/img/project/ces/img-5.png",
-                "src/img/project/ces/img-6.png"
+                "src/img/project/ces/img (1).jpg",
+                "src/img/project/ces/img (2).png",
+                "src/img/project/ces/img (3).png",
+                "src/img/project/ces/img (4).png",
+                "src/img/project/ces/img (5).png",
+                "src/img/project/ces/img (6).png"
             ]
         },
         {
@@ -26,9 +26,9 @@
             "projectDesc": "长沙市教育考试院前身为长沙市高等学校招生委员会办公室。主管全市普通高等学校招生考试、高等教育自学考试、硕士研究生招生考试、普通高中学业水平考试、初中学业水平考试、成人高校招生考试等...",
             "jobDesc":"主要负责前端界面的编写，采用 Bootstrap3.0 进行布局。进一步使用 html5 和 CSS3 进行页面效果优化 ,检查前端界面代码，测试兼容性。添加公共部分，整理代码，总结并提交开发文档。对 javascript 的 alert() 、confirm() 进行重写，实现自定义的模态对话框，实现 jquery 插件模块化的改造以及独立组件的抽离",
             "img": [
-                "src/img/project/ksy/img-1.png",
-                "src/img/project/ksy/img-2.png",
-                "src/img/project/ksy/img-3.png"
+                "src/img/project/ksy/img (1).jpg",
+                "src/img/project/ksy/img (2).jpg",
+                "src/img/project/ksy/img (3).jpg"
             ]
         },
         {

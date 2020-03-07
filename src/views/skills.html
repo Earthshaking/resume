@@ -7,68 +7,86 @@
         </div>
     </div>
     <div class="page-content">
-        <br>
-        <ul class="skill-list">
-            <li class="skill-list-item">
-                <span class="skill-text">html</span>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated"
-                         role="progressbar"
-                         aria-valuenow="75"
-                         aria-valuemin="0"
-                         aria-valuemax="100"
-                         style="width: 75%"></div>
+        <div class="skill-list">
+            <script type="text/html" template lay-url="./data/config.json" lay-done="layui.data.setProgress()">
+                {{# layui.each(d.data.skills, function(index, item){}}
+                <div class="row skill-list-item">
+                    <span class="skill-text col">{{item.name}}</span>
+                    <div class="col-md-10 col-12 skill-progress">
+                        <div class="progress">
+                            {{# if (item.level == '一般') { }}
+                            <div class="progress-bar bg-custom"
+                                 role="progressbar"
+                                 data-text="{{item.level}}"
+                                 aria-valuenow="25"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 style="width: 0">
+                            </div>
+                            {{# } else if(item.level == '良好') { }}
+                            <div class="progress-bar bg-custom"
+                                 role="progressbar"
+                                 data-text="{{item.level}}"
+                                 aria-valuenow="50"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 style="width: 0">
+                            </div>
+                            {{# } else if(item.level == '熟练') { }}
+                            <div class="progress-bar bg-custom"
+                                 role="progressbar"
+                                 data-text="{{item.level}}"
+                                 aria-valuenow="75"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 style="width: 0">
+                            </div>
+                            {{# } else if(item.level == '精通') { }}
+                            <div class="progress-bar bg-custom"
+                                 role="progressbar"
+                                 data-text="{{item.level}}"
+                                 aria-valuenow="100"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 style="width: 0">
+                            </div>
+                            {{# } }}
+                        </div>
+                    </div>
                 </div>
-            </li>
-            <li class="skill-list-item">
-                <span class="skill-text">javascript</span>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated"
-                         role="progressbar"
-                         aria-valuenow="75"
-                         aria-valuemin="0"
-                         aria-valuemax="100"
-                         style="width: 75%"></div>
-                </div>
-            </li>
-            <li class="skill-list-item">
-                <span class="skill-text">CSS</span>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated"
-                         role="progressbar"
-                         aria-valuenow="75"
-                         aria-valuemin="0"
-                         aria-valuemax="100"
-                         style="width: 75%"></div>
-                </div>
-            </li>
-            <li class="skill-list-item">
-                <span class="skill-text">vue</span>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated"
-                         role="progressbar"
-                         aria-valuenow="75"
-                         aria-valuemin="0"
-                         aria-valuemax="100"
-                         style="width: 75%"></div>
-                </div>
-            </li>
-        </ul>
-    
+                {{# }); }}
+            </script>
+        </div>
     
     </div>
 </div>
 
 <script>
-    layui.use(['admin', 'layer', 'view'], function () {
-        
-        var $ = layui.$,
-            setter = layui.setter,
-            admin = layui.admin,
-            view = layui.view,
-            global = layui.global,
-            content = $(".content");
-        
-        
-    });
+    layui.data.setProgress = function () {
+        layui.use(['admin', 'layer', 'view'], function () {
+            var $ = layui.$,
+                setter = layui.setter,
+                admin = layui.admin,
+                view = layui.view,
+                global = layui.global,
+                content = $(".content");
+            
+            var skillItem = $(".skill-list-item");
+            
+            skillItem.each(function (e) {
+                var $this = $(this),
+                    progress = $this.find(".progress-bar"),
+                    text = progress.attr("data-text"),
+                    values = progress.attr('aria-valuenow');
+                // progress.animate({width: values + "%"},function () {
+                //     progress.text(text);
+                // });
+                var value = 0;
+                setInterval(function (e) {
+                    progress.css("width", values + "%").text(text);
+                }, 100);
+            });
+            
+        });
+    };
 </script>
